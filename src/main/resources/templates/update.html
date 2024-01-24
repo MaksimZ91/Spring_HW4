@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+    <body>
+        <form th:action="@{/noteUpdate}"  th:object="${note}" method="post" class="shadow p-3 mb-5 mx-auto bg-body rounded w-75 mt-5 z-1 position-absolute top-50 start-50 translate-middle"
+              id="updateForm">
+            <p class="text-center fs-1">Обновление</p>
+            <div class="form-floating mb-3">
+                <input readonly type="number" class="form-control" id="id" th:field="*{id}"
+                       placeholder="ID">
+                <label for="id">ID</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="title" placeholder="title"
+                       th:field="*{title}">
+                <label for="title">Title</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="description" placeholder="Description"
+                       th:field="*{description}">
+                <label for="description"> Description</label>
+            </div>
+            <button type="submit" class="btn btn-outline-primary mx-auto mt-3">Обновить</button>
+        </form>
+    </body>
+</html>
